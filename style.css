@@ -1,18 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: #333;
+    width: 300px; /* Fixed width for better control */
+}
+
 .calcDisp {
-    background-color: rgb(187, 180, 180);
-    width: 100px;
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 2em;
     text-align: right;
-    margin-bottom: 10px;
-    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    box-sizing: border-box; /* Include padding in width */
 }
 
-.btn, .clear-btn {
-    width: 100px;
-    text-align: center;
-    background-color: rgb(187, 180, 180);
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-.clear-btn {
-    margin-top: 10px;
-    color: white;
+button {
+    padding: 15px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #777;
+    color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #888;
+}
+
+button.operator,
+button.equals {
+    background-color: #ff9500;
+}
+
+button.operator:hover,
+button.equals:hover {
+    background-color: #e08500;
+}
+
+button.clear,
+button.backspace {
+    background-color: #a5a5a5;
+    color: #333;
+}
+
+button.clear:hover,
+button.backspace:hover {
+    background-color: #b5b5b5;
+}
+
+/* Make the zero button span two columns */
+button.zero {
+    grid-column: span 2;
 }
